@@ -57,6 +57,11 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-950 text-gray-200 dark:bg-gray-950">
       <div className="max-w-7xl mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold mb-6">Primary Dashboard</h1>
+{lowInventory.length===0 && activePrints.length===0 && pendingReturns.length===0 && (
+  <div className="bg-yellow-400 text-gray-900 px-4 py-2 rounded mb-4">
+    System Ready / Awaiting Data
+  </div>
+)}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Print Jobs Panel */}
           <div className="bg-gray-800 rounded-lg shadow p-6 flex flex-col">
