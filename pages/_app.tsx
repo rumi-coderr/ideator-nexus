@@ -1,9 +1,11 @@
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
-import { supabase } from '../lib/supabaseClient'
+import Layout from '../components/Layout'
 
 export default function App({ Component, pageProps }: AppProps) {
-  // Note: SessionContextProvider is unavailable in the installed auth-helpers version.
-  // The app runs without explicit provider; you may add it later with a newer package.
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
