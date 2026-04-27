@@ -43,6 +43,10 @@ export default function PrintQueue() {
       setMessage('Error: ' + error.message);
       return;
     }
+    if (!data || !data[0]) {
+      setMessage('Error: No job returned from insert');
+      return;
+    }
     const job = data[0] as any;
     const { position, estCompletion } = await getQueueInfo(job.id);
     setMessage(`Submitted! Position ${position}. Estimated completion at ${estCompletion.toLocaleTimeString()}`);
