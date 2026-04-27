@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../lib/supabaseClient'
+import { createClient } from '../utils/supabase/client'
+
+export const dynamic = 'force-dynamic'
 import Link from 'next/link'
 
 interface InventoryItem {
@@ -26,6 +28,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const supabase = createClient()
       // Low inventory where quantity < 5
       const { data: inv, error: invErr } = await supabase
         .from('inventory_items')
