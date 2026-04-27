@@ -15,6 +15,7 @@ interface PrintJob {
   id: string
   job_name: string
   filament_type: string
+  estimated_dur: number
   status: string
   queued_at: string
 }
@@ -73,6 +74,7 @@ export default function Dashboard() {
                 {activePrints.map((job) => (
                   <li key={job.id} className="bg-gray-700 p-3 rounded">
                     <strong>{job.job_name}</strong> – {job.filament_type}
+                    <div className="text-xs text-gray-400">Estimated Dur: {job.estimated_dur} min</div>
                     <div className="text-xs text-gray-400">Status: {job.status}</div>
                   </li>
                 ))}
