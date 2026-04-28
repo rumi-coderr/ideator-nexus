@@ -27,3 +27,4 @@ The app is set up for Vercel / Netlify deployment. Supabase migrations are manag
 
 ## License
 MIT – feel free to fork and improve!
+# End of README
