@@ -6,3 +6,10 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+// Add basePath for GitHub Pages deployment
+tempConfig = {
+  ...nextConfig,
+  basePath: process.env.NODE_ENV === 'production' ? '/ideator-nexus' : '',
+};
+module.exports = tempConfig;
